@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  cursor: pointer;
+  font-size: 10rem;
+  color: #4caf50;
+}
+h1:hover {
+  transition: 300ms;
+  color: #ff0000;
+}
+a {
+  text-decoration: none;
+  color: #4caf50;
+}

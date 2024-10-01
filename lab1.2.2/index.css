@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  background-color: rgb(153, 153, 254);
+  border: solid 10px rgb(84, 84, 246);
+  width: auto;
+  height: 100vh;
+}
+section {
+  margin-top: 100px;
+  margin-left: 70px;
+  width: 700px;
+  height: 200px;
+  border: solid 5px rgb(248, 0, 0);
+  background-color: rgb(250, 227, 199);
+}
+h1 {
+  margin-top: 40px;
+  margin-left: 50px;
+  cursor: pointer;
+  color: #4caf50;
+}
+h1:hover {
+  transition: 300ms;
+  color: #ff0000;
+}
+a {
+  text-decoration: none;
+  color: #4caf50;
+}
