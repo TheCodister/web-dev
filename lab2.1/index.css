@@ -28,3 +28,17 @@ body {
   background-color: #45a049;
   border-radius: 5px;
 }
+
+/* For desktop hover functionality */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  margin-top: 0; /* Ensures dropdown appears directly below button */
+}
+
+/* Optional: adjust hover styles */
+.dropdown:hover > .nav-link {
+  background-color: #6c757d; /* Adjust this for hover color */
+}
