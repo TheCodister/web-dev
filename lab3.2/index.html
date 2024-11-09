@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Selection</title>
+    <link href="index.css" rel="stylesheet" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="d-flex justify-content-center">
+    <div class="container mt-5">
+      <h2>Choose Your Location</h2>
+      <form action="process_location.php" method="post" id="locationForm">
+        <div class="form-group">
+          <label for="country">Country:</label>
+          <select class="form-control" id="country" name="country" required>
+            <option value="">Select Country</option>
+            <option value="USA">USA</option>
+            <option value="Canada">Canada</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="state">State:</label>
+          <select
+            class="form-control"
+            id="state"
+            name="state"
+            required
+            disabled
+          >
+            <option value="">Select State</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="city">City:</label>
+          <select class="form-control" id="city" name="city" required disabled>
+            <option value="">Select City</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      // Sample data for dependent dropdowns
+      const locations = {
+        USA: {
+          California: ["Los Angeles", "San Francisco"],
+          Texas: ["Houston", "Austin"],
+        },
+        Canada: {
+          Ontario: ["Toronto", "Ottawa"],
+          Quebec: ["Montreal", "Quebec City"],
+        },
+      };
+
+      $("#country").change(function () {
+        const country = $(this).val();
+        const states = locations[country];
+        $("#state").prop("disabled", !country);
+        $("#state").html('<option value="">Select State</option>');
+        $("#city")
+          .html('<option value="">Select City</option>')
+          .prop("disabled", true);
+
+        if (states) {
+          for (let state in states) {
+            $("#state").append(new Option(state, state));
+          }
+        }
+      });
+
+      $("#state").change(function () {
+        const state = $(this).val();
+        const cities = locations[$("#country").val()][state];
+        $("#city").prop("disabled", !state);
+        $("#city").html('<option value="">Select City</option>');
+
+        if (cities) {
+          cities.forEach((city) => $("#city").append(new Option(city, city)));
+        }
+      });
+    </script>
+  </body>
+</html>

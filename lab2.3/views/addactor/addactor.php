@@ -20,26 +20,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <section>
     <h1>Add Actor</h1>
     <form action="" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <label class="form-label" for="name">Name:</label>
+        <input class="form-control" type="text" id="name" name="name" required>
         <br>
         
-        <label for="birthday">Birthday:</label>
-        <input type="date" id="birthday" name="birthday" required>
+        <label class="form-label" for="birthday">Birthday:</label>
+        <input class="form-control" type="date" id="birthday" name="birthday" required>
         <br>
         
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age" required>
+        <label class="form-label" for="age">Age:</label>
+        <input class="form-control" type="number" id="age" name="age" required>
         <br>
         
-        <label for="actor_description">Description:</label>
-        <textarea id="actor_description" name="actor_description" required></textarea>
+        <label class="form-label" for="actor_description">Description:</label>
+        <textarea id="actor_description" class="form-control" name="actor_description" required></textarea>
         <br>
         
-        <label for="actor_image_url">Image URL:</label>
-        <input type="text" id="actor_image_url" name="actor_image_url" required>
+        <label class="form-label" for="actor_image_url">Image URL:</label>
+        <input class="form-control" type="text" id="actor_image_url" name="actor_image_url" required>
         <br>
         
-        <button type="submit">Add Actor</button>
+        <button class="btn btn-primary" type="submit">Add Actor</button>
     </form>
 </section>
